@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CivicReport</title>
+    <link rel="stylesheet" href="vortex.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+</head>
+<body>
+
+<!-- LOGIN SCREEN -->
+<div id="loginScreen" class="login-screen">
+    <div class="login-card">
+        <h2>🏙 CivicReport</h2>
+        <input id="usernameInput" placeholder="Enter your name">
+        <button onclick="login()">Login</button>
+    </div>
+</div>
+
+<!-- MAIN APP -->
+<div id="app" style="display:none">
+
+<header>
+    <h2>🏙 CivicReport</h2>
+    <div class="nav-right">
+        <span id="userLabel"></span>
+        <button class="green" onclick="openModal()">+ Report Issue</button>
+        <button class="logout" onclick="logout()">Logout</button>
+    </div>
+</header>
+
+<div class="content">
+    <div id="map"></div>
+
+    <aside>
+        <select id="filter" onchange="renderReports()">
+            <option value="all">All Issues</option>
+            <option value="pending">Pending</option>
+            <option value="resolved">Resolved</option>
+        </select>
+
+        <div id="reportCards"></div>
+    </aside>
+</div>
+</div>
+
+<!-- REPORT MODAL -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <h3>Report an Issue</h3>
+
+        <select id="category">
+            <option value="">Select Category</option>
+            <option>Water</option>
+            <option>Road</option>
+            <option>Garbage</option>
+            <option>Streetlight</option>
+        </select>
+
+        <input id="title" placeholder="Issue title">
+        <textarea id="description" placeholder="Description"></textarea>
+        <input id="location" placeholder="Location">
+
+        <button class="green" onclick="submitReport()">Submit</button>
+        <button onclick="closeModal()">Cancel</button>
+    </div>
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="vortex.js"></script>
+</body>
+</html>

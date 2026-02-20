@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    background: #f4f6f8;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(90deg,#1e3c72,#2a5298);
+    color: white;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.green {
+    background: #2ecc71;
+    color: white;
+}
+
+.logout {
+    background: #e74c3c;
+    color: white;
+}
+
+.nav-right button {
+    margin-left: 8px;
+}
+
+/* LAYOUT */
+.content {
+    display: flex;
+    height: calc(100vh - 60px);
+}
+
+#map {
+    flex: 2;
+}
+
+aside {
+    flex: 1;
+    background: white;
+    padding: 12px;
+    overflow-y: auto;
+}
+
+/* REPORT CARD */
+.report-card {
+    background: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+
+.pending {
+    color: orange;
+}
+
+.resolved {
+    color: green;
+}
+
+/* LOGIN */
+.login-screen {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.2);
+    text-align: center;
+}
+
+.login-card input {
+    width: 100%;
+    padding: 10px;
+    margin: 12px 0;
+}
+
+/* MODAL (🔥 FIXED) */
+.modal {
+    display: none;                 /* IMPORTANT */
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+}
+
+.modal-content input,
+.modal-content textarea,
+.modal-content select {
+    width: 100%;
+    margin: 6px 0;
+    padding: 8px;
+}
